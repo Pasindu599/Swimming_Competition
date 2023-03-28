@@ -1,42 +1,35 @@
 public class Swimmer{
-    private String name;
-    private int id ;
-    
-    public Swimmer(String name , int id){
-        this.name = name ;
-        this.id = id;
-    }
-    
-    
-
-    public void swim(){
-        String str = "Swimmer " + this.id + " is swimming.";
-        System.out.println(str);
-    }
-
-    public void checkScoreBoard(){
-        String score = "Swimmer " + this.id + " checked the score board.";
-        System.out.println(score);
-    }
-
-    public String getName() {
+     private String name;
+     private String id ;
+     private static int countSwimmers = 0 ; // get count of swimmers
+     public Swimmer(String name){
+         countSwimmers ++;
+         this.name = name ;
+         this.id = "SW" + countSwimmers ;
+     }
+     // behaviors of swimmer
+     public void swim(){
+         String str = this.name + " is swimming.";
+         System.out.println(str);
+     }
+     public void checkScoreBoard(){
+         String score = this.name + " checked the score board.";
+         System.out.println(score);
+     }
+     // getter of name
+     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
+     }
+     // setter of name
+     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Swimmer [name=" + name + ", id=" + id + "]";
-    }
-
-    public int getId() {
+     }
+     // getter of id
+     public String getId() {
         return id;
-    }
-
-    public void setId(int id) {
+     }
+     // setter of id
+     public void setId(String id) {
         this.id = id;
-    }
+     }
 }
