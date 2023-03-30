@@ -1,20 +1,36 @@
-public class Judge{
-    private String name ;
-    private int id ; 
-    private static int numberOfJudges = 0;
-    
-    public Judge(String name , int id){
-        numberOfJudges ++;
+public class Judger{
+     private String name ;
+    private String id ; 
+    private static int countJudges = 0 ; 
+    public Judger(String name){
+        countJudges ++;
         this.name = name;
-        this.id = numberOfJudges ;
+        this.id = "JD" + countJudges ;
     }
+    // behaviors of judger
     public void blow(){
-        String blow = "Judge " + this.id + "blew the whistle.";
+        String blow = this.name + " is blowing the whistle.";
         System.out.println(blow);
     }
     public void checkScoreBoard(){
-        String score = "Judge " + this.id + " checked the score board.";
+        String score = this.name + " checked the score board.";
         System.out.println(score);
+    }
+    // getter of name
+    public String getName() {
+        return name;
+    }
+    // setter of name
+    public void setName(String name) {
+        this.name = name;
+    }
+    // getter of id
+    public String getId() {
+        return id;
+    }
+    // setter of id
+    public void setId(String id) {
+        this.id = id;
     }
 
 }
